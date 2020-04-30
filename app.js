@@ -5,7 +5,6 @@ const port = process.env.PORT || 3001; // Heroku will need the PORT environment 
 
 const bodyParser = require("body-parser");
 const connectDB = require("./db");
-const pino = require("express-pino-logger")();
 const client = require("twilio")(
   process.env.TWILIO_ACCOUT_SID,
   process.env.TWILIO_AUTH_TOKEN
@@ -32,7 +31,6 @@ app.use(
 
 app.use(express.static(path.join(__dirname, "build")));
 app.use(bodyParser.json());
-app.use(pino);
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ extended: false }));
 
