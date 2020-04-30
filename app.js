@@ -4,7 +4,7 @@ const path = require("path");
 const port = process.env.PORT || 3001; // Heroku will need the PORT environment variable
 
 const bodyParser = require("body-parser");
-const connectDB = require("./config/db");
+const connectDB = require("./db");
 const pino = require("express-pino-logger")();
 const client = require("twilio")(
   process.env.TWILIO_ACCOUT_SID,
